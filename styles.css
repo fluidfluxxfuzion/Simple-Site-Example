@@ -1,0 +1,438 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Mobile/Global Styles */
+:root{
+    /* Colors from colormind.io */
+    --dk-blue: #1A1C29;
+    --med-blue: #365B70;
+    --lt-blue: #8095A7;
+    --beige: #D6CFBB;
+    --cream: #F3E9D9;
+
+    /* Neutrals */
+    --lt-gray: #eaeaea;
+    --med-gray: #555;
+    --dk-gray: #222;
+
+    /* Fonts from Google Fontss*/
+    --heading-fonts: "Vidaloka", Georgia, serif; /* weight: 400 */
+    --body-fonts: "Martel Sans", Verdana, sans-serif; /* weight: 400, 600, 900 */
+
+    /* Shadows */
+    --lg-shadow: -6px 6px 12px var(--med-gray);
+    --sm-shadow: -3px 3px 6px var(--med-gray);
+}
+
+/* Body Styles */
+body{
+    font-family: var(--body-fonts);
+    line-height: 1.35;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+    color: var(--dk-gray);
+    background: var(--beige) url("images/white-sand.png");
+    background-attachment: fixed;
+}
+
+/* Skip Link Styles */
+#skip{
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip:focus{
+    position: static;
+    width: auto;
+    height: auto;
+    font-family: var(--body-fonts);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dk-gray);
+    outline: 4px solid var(--med-blue);
+    background-color: var(--cream);
+    outline-offset: 0;
+}
+
+/* Hidden Heading for Screen Readers Styles */
+.sr-only{
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Header/Main/Footer Styles */
+header, main, footer{
+    margin: 0 auto;
+}
+
+header, footer{
+    padding: 2rem 1rem;
+    width: calc(100% - 2rem);
+    max-width: calc(1280px - 2rem);
+    background-color: var(--dk-blue);
+    color: var(--cream);
+}
+
+main{
+    background-color: var(--cream);
+    width: 1280px;
+    width: 100%;
+}
+
+/* Container Styles */
+main > section{
+    padding: 1rem;
+}
+
+/* Heading Styles */
+h1, h2, h3{
+    font-family: var(--heading-fonts);
+    font-weight: 400;
+}
+
+h1{
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+h2{
+    font-size: 2.5rem;
+    margin: 0.75rem 0;
+    text-align: center;
+}
+
+h3{
+    font-size: 2.25rem;
+    margin: 1rem 0;
+}
+
+/* Link Styles */
+a{
+    display: block;
+    color: var(--dk-gray);
+    padding: 1rem;
+    text-decoration-color: var(--med-blue);
+    text-align: center;
+    transition: text-decoration-color 500ms;
+}
+
+a:hover{
+    text-decoration-color: var(--dk-blue);
+}
+
+a:focus{
+    outline: 4px solid var(--med-blue);
+    outline-offset: 2px;
+}
+
+/* Navigation Styles */
+nav a{
+    text-decoration: none;
+    background-color: var(--cream);
+    color: var(--dk-blue);
+    margin: 1rem auto;
+    font-size: 1.25rem;
+    font-weight: 900;
+    max-width: calc(225px - 2rem);
+    border: 4px solid var(--cream);
+    transition: all 300ms;
+}
+
+nav a:hover{
+    background-color: var(--dk-blue);
+    color: var(--cream);
+}
+
+/* Image Styles */
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Text Styles */
+p{
+    max-width: 65ch;
+    margin: 0 auto;
+}
+
+.co-name{
+    font-family: var(--heading-fonts);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+/* CTA Section */
+iframe{
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 3/4 auto;
+    margin: 1rem auto;
+    box-shadow: var(--sm-shadow);
+}
+
+#cta a{
+    text-decoration: none;
+    font-family: var(--heading-fonts);
+    font-size: 1.85rem;
+    background-color: var(--dk-blue);
+    color: var(--cream);
+    width: fit-content;
+    margin: 1rem auto;
+    box-shadow: var(--lg-shadow);
+    transition: all 400ms;
+}
+
+#cta a:hover{
+    background-color: var(--cream);
+    color: var(--dk-blue);
+    box-shadow: var(--sm-shadow);
+}
+
+/* Products Section Styles */
+#products{
+    background-image: url(images/white-sand.png);
+}
+
+#products section{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 375px;
+    margin: 2rem auto;
+}
+
+#products img{
+    order: -1;
+    box-shadow: var(--sm-shadow);
+}
+
+#products h3{
+    margin: 0;
+    text-align: center;
+}
+
+/* Testimonials Section Styles */
+#testimonials section{
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    grid-template-rows: auto auto;
+    gap: 1rem 0.5rem;
+    align-items: center;
+    max-width: 425px;
+    margin: 2rem auto;
+}
+
+#testimonials h3{
+    font-size: 1.25rem;
+    margin: 0 0 0 1rem;
+}
+
+.quotes{
+    color: var(--dk-blue);
+    font-weight: 900;
+}
+
+#testimonials img{
+    border-radius: 50%;
+    box-shadow: var(--sm-shadow);
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#testimonials blockquote{
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+
+h3 span{
+    display: block;
+
+}
+
+/* Footer Styles */
+footer{
+    text-align: center;
+}
+
+footer section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin: 1rem auto;
+    width: 275px;
+}
+
+footer h2{
+    grid-column: 1/-1;
+    margin: 0;
+    font-size: 2rem;
+}
+
+footer svg{
+    stroke: var(--cream);
+    width: 50px;
+    height: 50px;
+}
+
+footer a{
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a:hover{
+background-color: var(--cream);
+}
+
+footer a:hover svg{
+    stroke: var(--dk-blue);
+}
+
+/* Media Queries */
+@media screen and (min-width: 500px){
+    nav ul{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    nav a{
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 700px){
+    nav ul{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #products{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 1rem;
+        justify-content: center;
+    }
+
+    #products h2{
+        flex-basis: 100%;
+    }
+    
+    #products section{
+        flex-basis: 30%;
+    }
+
+    #testimonials{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        max-width: calc(875px - 2rem);
+        margin: 0 auto;
+    }
+
+    #testimonials h2{
+        grid-column: 1/-1;
+        text-align: left;
+    }
+
+    #testimonials section{
+        margin: 0 auto 2rem;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    header{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: 1rem;
+        justify-items: center;
+        align-items: center;
+    }
+
+    h1{
+        text-align: left;
+    }
+
+    #cta, #products, #testimonials{
+        padding: 3rem 1rem;
+    }
+
+    #cta{
+        display: grid;
+        grid-template-columns: 2fr 2.5fr;
+        grid-template-rows: auto auto auto;
+        gap: 1rem 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    #cta h2, #cta p, #cta a{
+        grid-column: 1/2;
+    }
+
+    #cta iframe{
+        grid-column: 2/3;
+        grid-row: 1/4;
+    }
+}
